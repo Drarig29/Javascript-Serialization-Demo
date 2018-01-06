@@ -50,7 +50,9 @@
 
     $('#deserialize').on('click', () => {
        var c = JSON.parse(example_text);
-       alert(c.color);
+      
+      if (!c || c.length == 0) return;
+      alert(c[0].color);
     })
     </script>
   </body>
