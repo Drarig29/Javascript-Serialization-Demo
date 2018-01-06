@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button id="serialize">Serialize</button>
+    <button id="deserialize">Deserialize</button>
+
+    <script>
+    class Car {
+      constructor(color, brand, name) {
+        this.color = color;
+        this.brand = brand;
+        this.name = name;
+      }
+    }
+
+    /* this is for one Car */
+
+    // $('#serialize').on('click', () => {
+    //    var c = new Car("red", "Bugatti", "Veyron");
+    //    alert(JSON.stringify(c));
+    // })
+    //
+    // var example_text = '{"color":"red","brand":"Bugatti","name":"Veyron"}'
+    //
+    // $('#deserialize').on('click', () => {
+    //    var c = JSON.parse(example_text);
+    //    alert(c.color);
+    // })
+
+    /* this is for an array of Car */
+
+    $('#serialize').on('click', () => {
+       var c = [
+         new Car("red", "Bugatti", "Veyron"),
+         new Car("blue", "Mercedes", "AMG"),
+         new Car("green", "Peugeot", "208"),
+         new Car("rainbow :D", "Renault", "Espace"),
+         new Car("yellow", "Toyota", "Prius"),
+         new Car("black", "BMW", "i8")
+       ];
+
+       alert(JSON.stringify(c));
+    })
+
+    var example_text = '[{"color":"red","brand":"Bugatti","name":"Veyron"},{"color":"blue","brand":"Mercedes","name":"AMG"},{"color":"green","brand":"Peugeot","name":"208"},{"color":"rainbow :D","brand":"Renault","name":"Espace"},{"color":"yellow","brand":"Toyota","name":"Prius"},{"color":"black","brand":"BMW","name":"i8"}]'
+
+    $('#deserialize').on('click', () => {
+       var c = JSON.parse(example_text);
+       alert(c.color);
+    })
+    </script>
+  </body>
+</html>
